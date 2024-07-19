@@ -4,22 +4,22 @@
 */
 
 //  cách 1
-// var person = {
-//     name: ['Christ', 'Bumstead'],
-//     age: 29,
-//     sex: 'male',
-//     bio() {
-//         console.log(`${this.name[0]} ${this.name[1]} is ${this.age} year old`)
-//     },
-//     introduceSelf() {
-//         console.log(`i'm ${this.name[0]}`) // this đề cập đến đối tượng mà phương thức gọi
-//     }
-// }
-// person.name
-// person.name[0]
-// person.name[1]
-// person.bio();
-// person.introduceSelf()
+var person = {
+    name: ['Christ', 'Bumstead'],
+    age: 29,
+    sex: 'male',
+    bio() {
+        console.log(`${this.name[0]} ${this.name[1]} is ${this.age} year old`)
+    },
+    introduceSelf() {
+        console.log(`i'm ${this.name[0]}`) // this đề cập đến đối tượng mà phương thức gọi
+    }
+}
+person.name
+person.name[0]
+person.name[1]
+person.bio();
+person.introduceSelf()
 
 //  cách 2
 // var person = {
@@ -32,14 +32,15 @@
 // person.name.second;
 
 /*
-    Object constructer
+    Object constructer là các thiết kế sẵn tạo các đối tượng có chung thuộc
+    tính và phương thức từ đó tiết kiệm thời gian tạo các đối tượng mới
 */
 
-function person(name) {
+function creatPerson(name) {
     this.name = name,
     this.introduceSelf = function() {
         console.log(`I'm ${this.name}`)
     };
 }
-var Cbum = new person('Christ Bumstead')
+var Cbum = new creatPerson('Christ Bumstead')
 Cbum.introduceSelf()
